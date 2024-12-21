@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .cont{
+    @apply flex justify-center flex-col m-auto items-center h-screen ;
+  }
+  .box{
+    @apply flex justify-center items-center box-border cursor-pointer w-1/3 h-1/3 border border-gray-600 bg-white hover:bg-[rgba(246,176,11,0.1)]
+  }
+  .clicked{
+    @apply pointer-events-none	
+  }
+  .restartButton{
+    @apply mt-5 p-2 bg-red-600 text-white font-bold rounded-md m-auto px-10 hover:bg-red-200 hover:text-red-600 border-2 border-red-600
+  }
+  #game {
+    @apply flex flex-wrap w-[350px] h-[350px] m-auto box-border rounded-md border-8 border-[rgba(246,176,11,1)] relative shadow-xl my-5 
+  }
+}
+body{
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(246,176,11,1) 100%);
+}
+.x::after {
+  content: "❌";
+  font-size: 60px;
+}
+.o::after {
+  content: "⭕";
+  font-size: 60px;
+}
+.winnerIs{
+  font-size: 50px;
+  color:rgb(239, 233, 233);
+  text-shadow: 5px 5px 10px red;
+  margin: 0 20px;
+}
+.g-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(246,176,11,1) 100%);
+  justify-content: center;
+  align-items: center;
+  color:red;
+  -webkit-box-shadow:-14px -11px 102px 43px rgba(246,176,11,1);
+  -moz-box-shadow: -14px -11px 102px 43px rgba(246,176,11,1);
+  box-shadow: -14px -11px 102px 43px rgba(246,176,11,1);
+  font-weight: 600;
+  font-size: 70px;
+  border-radius: 200px;
+  box-sizing: border-box;
+  -webkit-animation: anim 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	animation: anim 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+ @-webkit-keyframes anim {
+  0% {
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes anim {
+  0% {
+    -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.flipX {
+  animation: 1s anim-flipX ease 2;
+  text-shadow: rgba(255,0,0,0.9) 0px 0px 39px;
+}
+@keyframes anim-flipX {
+  0% {
+    opacity: 0;
+    transform: rotateX(90def);
+  }
+  50% {
+    opacity: 1;
+    transform: rotateX(720deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(720deg);
+  }
+}

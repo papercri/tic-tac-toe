@@ -4,6 +4,8 @@
 
 In this activity, you will create a game using the DOM, HTML, and CSS.
 
+**Link**: http://tic-tac-toe-sage-theta.vercel.app
+
 ## Objectives
 
 - Directly manipulate the DOM by adding and removing elements.
